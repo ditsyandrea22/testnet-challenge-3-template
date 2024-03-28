@@ -81,9 +81,9 @@ do-it:
     just send-packet optimism
     echo "You've done it!"
 
-run-challenge-3:
-    echo "Running the challenge 3 flow..."
-    just deploy optimism optimism
+run-challenge-4:
+    echo "Running the challenge 4 flow..."
+    just deploy base base
     just sanity-check
     just send-packet optimism
     echo "Thank you for participating in Challenge!"

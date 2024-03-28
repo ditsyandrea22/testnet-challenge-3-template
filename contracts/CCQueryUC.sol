@@ -75,6 +75,10 @@ contract CCQueryUC is UniversalChanIbcApp {
 
         (address _caller, string memory _query) = abi.decode(packet.appData, (address, string));
 
+        bytes memory payload = abi.encode(sender, "mint");
+
+        return AckPacket(true, payload);
+
         require(!addressMap[_caller], "Address already queried");
         if (_counter >= 500) {
             return AckPacket(true, abi.encode(LIMIT_MESSAGE));
